@@ -3,18 +3,18 @@ t=0;
 x = 5 ;
 i=1;
 startSpot = 0;
-interv = 10 ; % considering data size (interv/step +1 = the number of data)
+interv = 1000 ; % considering data size (interv/step +1 = the number of data)
 step = 0.1 ; % lowering step has a number of cycles and then acquire more data
 while ( t <interv )
     b(i)=sin(t(i))+5;
     plot(t,b)
 
-      if (t(i)-50 < 0)
+      if (t(i)-10 < 0)
           startSpot = 0;
-          endSpot = 50;
+          endSpot = 10;
       else
-          startSpot = (t(i))-50;
-          endSpot = (t(i)+50);
+          startSpot = (t(i))-10;
+          endSpot = (t(i)+10);
       end
     
       axis([ startSpot,endSpot , 0 , 10 ]);
@@ -22,7 +22,7 @@ while ( t <interv )
       t(i+1) = t(i) + step;
       i=i+1;
       drawnow;
-      pause(0.05)
+      pause(0.0001)
 end
 
 %% ¿øº»
