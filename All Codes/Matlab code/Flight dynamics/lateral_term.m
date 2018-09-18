@@ -11,30 +11,31 @@ clear all
    t2_s = tic;
    t3_s = tic;
    
+   %g= 32.17405 ft/s2
    rho = 0.002377; % slugs/ft^3 at sea level
- m = 0.308; % slugs
-U = 65.62; %ft/sec
-S = 7.836; %ft^2
-b = 6.562; %ft , Wingspan
+ m = 0.308; % slugs ,  1 kg = 0.069 slgus
+U = 65; %ft/sec ,  1 ft/s = 0.305 m/s
+S = 40.63; %ft^2    1 m^2 = 10.76 ft^2
+b = 6.56; %ft , Wingspan,  1 m = 3.28 ft
 q = (rho*U^2)/2; % slugs/(ft*sec^2)
-   I_x = 0.0035; %slug*ft^2
-   I_z = 0.007; %slug*ft^2
+   I_x = 0.482; %slug*ft^2 , 1 kg*m^2 = 0.74 slug*ft^2
+   I_z = 0.962; %slug*ft^2
    I_xz = 0; %slug*ft^2
    
-   C_lp = -0.39;
-   C_lr = 0.034;
-   C_np = 0.004;
-   C_nbeta = 0.004;
-   C_nr = -0.0269;
-   C_ybeta = -0.141;
-   C_yphi = 0.073;
-   C_ypsi = 0;
-   C_lbeta = -0.036;
+   C_lp = -0.385;
+   C_lr = 0.055;
+   C_np = 0.024;
+   C_nbeta = 0.071;
+   C_nr = -0.053;
+   C_ybeta = -0.279; 
+   C_yphi = 0.049;  % mg*cos(theta)/Sq
+   C_ypsi = 0;   % mg*sin(theta)/Sq
+   C_lbeta = -0.0684;
    C_yRud = 0;
    C_nRud = 0;
    C_lRud = 0;
-   C_yAil = -0.041;
-   C_nAil = -0.00024;
+   C_yAil = -0.03;
+   C_nAil = -0.011;
    C_lAil = 0.254;
    
 %% State Equation

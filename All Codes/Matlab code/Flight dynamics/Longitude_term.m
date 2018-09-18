@@ -5,26 +5,27 @@ close all
 
 % Logitude Motion Analysis
 %% Data Acquision
-m = 0.308; % slugs
-U = 65.62; %ft/sec
-S = 7.836; %ft^2
-c=1.194; % Chord length, ft
-Iy=0.0034; %slug*ft^2
-rho=0.00237; % slugs/ft^3 at sea level
-q=1/2*rho*U^2;
+  %g= 32.17405 ft/s2
+m = 0.318; % slugs ,  1 kg = 0.069 slgus
+U = 65; %ft/sec ,  1 ft/s = 0.305 m/s
+S = 40.63; %ft^2    1 m^2 = 10.76 ft^2
+c=1.64; % Mean Aerodynamic Chord length, ft, 1 m = 3.28 ft
+Iy=0.489; %slug*ft^2 , 1 kg*m^2 = 0.74 slug*ft^2
+rho=0.00238; % slugs/ft^3 at sea level
+q=1/2*rho*U^2;  % 5.0278
 
 
-Cxu=-0.195;
-Cxa=0.1097;
-Cw=-0.073;%
-Czu=-1.1;
-Cza=-3.905;
-Czq=-4.42;
-Cmq=-1.94; %
+Cxu=-0.195;  %확인 필요  -2Cd-U*Cd_u
+Cxa=0.1011;
+Cw=-0.05;%  -mg/Sq
+Czu=-1.1; %확인 필요   -2Cl-U*Cl_u
+Cza=-3.756;
+Czq=-4.26;
+Cmq=-1.38; %확인 필요
 Cmu=0;
-Cma=-0.578;
-Cz_Ele=-0.8095;
-Cm_Ele=0.5236;
+Cma=-0.276;
+Cz_Ele=-0.3294;
+Cm_Ele=-0.1555;
 
  
 
