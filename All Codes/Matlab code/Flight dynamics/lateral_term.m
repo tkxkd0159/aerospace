@@ -18,7 +18,7 @@ U = 65; %ft/sec ,  1 ft/s = 0.305 m/s
 S = 10.22; %ft^2    1 m^2 = 10.76 ft^2
 b = 6.56; %ft , Wingspan,  1 m = 3.28 ft
 q = (rho*U^2)/2; % slugs/(ft*sec^2)
-   I_x = 0.482; %slug*ft^2 , 1 kg*m^2 = 0.74 slug*ft^2
+   I_x = 0.804; %slug*ft^2 , 1 kg*m^2 = 0.74 slug*ft^2
    I_z = 0.962; %slug*ft^2
    I_xz = 0; %slug*ft^2
    

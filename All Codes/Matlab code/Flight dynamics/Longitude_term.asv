@@ -135,32 +135,24 @@ legend('Revision','Origin')
  
 subplot(5,1,3)
 plot(t, c,'r')
-grid on
-hold on
-plot(t,c2,'b')
+grid on;
 
 ylabel('\theta(deg)');
-legend('Revision','Origin')
  
  
 subplot(5,1,4)
 plot(t, d1,'r')
 grid on
-hold on
-plot(t, d2, 'b')
 
 ylabel('$\dot{\theta}$ (deg/sec)','interpreter','latex') 
-legend('Revision','Origin')
  
  
 subplot(5,1,5)
  plot(t, gamma1,'r')
  xlabel('Time(s)')
 grid on
-hold on
- plot(t,gamma2, 'b')
+
 ylabel('\gamma(deg)');
-legend('Revision','Origin')
  
 
  
