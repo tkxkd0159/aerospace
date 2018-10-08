@@ -117,9 +117,7 @@ q2 = (rho2*U2^2)/2; % slugs/(ft*sec^2)
       end
       dX1 = A*X1 + B1*u;
       X1 = X1 + dX1*dt;
-      
       dX2 = A2*X2 + B2*u;
-      X2 = X2 + dX2*dt;
       
       result1(i,:) = X1';
       result2(i,:) = X2';
@@ -268,44 +266,39 @@ end
      
      fprintf('Roll Subsidence = %.4f%+.4fi \n',real(roll2),imag(roll2));
      fprintf('Spiral Divergence = %.4f%+.4fi \n',real(spiral2),imag(spiral2));
-     fprintf('Dutch Roll Mode = %.4f%+.4fi, %.4f%+.4fi  \n',real(dutch3),imag(dutch3),real(dutch4),imag(dutch4));
+     fprintf('Dutch Roll Mode = %.4f%+.4fi, %.4f%+.4fi  \n',real(dutch2),imag(dutch1),real(dutch1),imag(dutch2));
   toc_e = toc(tic_s);
      
 waitbar(1,f,'Finishing');
 
 close(f)
 %% Flight mode plot 
-
+figure()
+plot(t(find(t==0):find(t==4)),beta2(find(t==0):find(t==4)))
+hold on
+grid on
+plot(t(find(t==0):find(t==4)),phi2(find(t==0):find(t==4)))
+plot(t(find(t==0):find(t==4)),psi2(find(t==0):find(t==4)))
+xlabel('Time(s)')
+ylabel('deg')
+legend('\beta','\phi','\psi')
+title('Dutch Roll mode(Rudder Deflected)')
 
 figure()
 plot(t(find(t==0):find(t==4)),phi_dot1(find(t==0):find(t==4)))
-hold on
 grid on
-plot(t(find(t==0):find(t==4)),phi_dot2(find(t==0):find(t==4)))
-
 title('Roll Subsidence Mode(Aileron Deflected)')
 xlabel('Time(s)')
 ylabel('$\dot{\phi}$ (deg/sec)','interpreter','latex')
-legend('Revision','Origin')
-
 figure()
 plot(t,phi1)
 grid on
-hold on
-plot(t, phi2)
-
 xlabel('Time(s)')
 ylabel('\phi(deg)')
 title('Spiral mode(Aileron Deflected)')
-legend('Revision','Origin')
-
 figure()
 plot(t,psi1)
-hold on
 grid on
-plot(t,psi2)
-
 xlabel('Time(s)')
 ylabel('\psi(deg)')
 title('Spiral mode(Aileron Deflected)')
-legend('Revision','Origin')
