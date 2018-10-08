@@ -22,4 +22,3 @@
   t_oe              4x12                  384  double              
   time_second       1x1441              11528  double              
   w                 4x12                  384  double              
- zero
