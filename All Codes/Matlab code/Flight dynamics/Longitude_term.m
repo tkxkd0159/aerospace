@@ -8,8 +8,9 @@ close all
   %g= 32.17405 ft/s2
 m = 0.318; % slugs ,  1 kg = 0.069 slgus
 U = 65; %ft/sec ,  1 ft/s = 0.305 m/s
-S = 40.63; %ft^2    1 m^2 = 10.76 ft^2
+S = 10.22; %ft^2    1 m^2 = 10.76 ft^2 
 c=1.64; % Mean Aerodynamic Chord length, ft, 1 m = 3.28 ft
+%c2=1.3579;
 Iy=0.489; %slug*ft^2 , 1 kg*m^2 = 0.74 slug*ft^2
 rho=0.00238; % slugs/ft^3 at sea level
 q=1/2*rho*U^2;  % 5.0278
