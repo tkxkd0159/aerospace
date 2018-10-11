@@ -6,7 +6,7 @@ close all
 % Logitude Motion Analysis
 %% Data Acquision
   %g= 32.17405 ft/s2
-  
+
 % Revision
 m = 0.386; % slugs ,  1 kg = 0.069 slgus
 U = 65; %ft/sec ,  1 ft/s = 0.305 m/s
@@ -45,16 +45,16 @@ Cm_Ele=-0.156;
 Cxu2=-0.0012;  %확인 필요  -2Cd-U*Cd_u
 Cxa2=0.101;
 Cw2=-0.05;%  -mg/Sq
-Czu2=-1.9; %확인 필요   -2Cl-U*Cl_u
+Czu2=-1.51; %확인 필요   -2Cl-U*Cl_u
 Cza2=-3.905;
 Czq2=-4.42;
 Cmq2=-1.94; %확인 필요
 Cmu2=0;
 Cma2=-0.578;
 Cz_Ele2=-0.809;
-Cm_Ele2=--0.524;
- 
- 
+Cm_Ele2=-0.524;
+
+
  
  %% state Equation and Euler Intergration
 %----------------------Revision--------------------% 
@@ -83,7 +83,7 @@ X2 = [0 0 0 0]'; % 초기화
  
 for i = 1: size(t,2)
     
-    if t(i) <= 3 && t(i) >1 % 1초부터3초까지
+    if t(i) <= 2 && t(i) >1 % 1초부터3초까지
         u = 3*pi/(180); % 3도를 radian으로 변화
     else
         u = 0; % 3초이후로는 변화주지 않음
@@ -104,7 +104,7 @@ c=(180/pi)*result1(:,3);  % Pitch Angle
 d1=(180/pi)*result1(:,4); 
 
 a2=result2(:,1); % u/U
-b2=(180/pi)*result2(:,2); % AOA variation
+b2=(180/pi)*result2(:,2); % AOA variation, initial AOA =0
 c2=(180/pi)*result2(:,3);  % Pitch Angle
 d2=(180/pi)*result2(:,4); 
  
@@ -130,7 +130,8 @@ plot(t, b1,'r')
  grid on
  hold on
 plot(t, b2, 'b')
-ylabel('\alpha(deg)');
+% ylabel('\alpha(deg)');
+ylabel('$\alpha^{\prime}$ (deg/sec)','interpreter','latex') 
 legend('Revision','Origin')
  
 subplot(5,1,3)
