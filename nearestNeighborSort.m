@@ -1,3 +1,8 @@
+clear all
+def=csvread('C:\Users\JackLee\Desktop\naca.csv');
+
+x=def(:,1);
+y=def(:,2);
 coord = cat(2,x,y); 
 coord = unique(coord,'rows');
 
@@ -21,3 +26,4 @@ end
 
 X=C(:,1); x=cat(1,x(1,1),X); 
 Y=C(:,2); y=cat(1,y(1,1),Y);
+plot(x,y)
