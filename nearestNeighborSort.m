@@ -1,5 +1,5 @@
 clear all
-def=csvread('C:\Users\JackLee\Desktop\naca.csv');
+def=csvread('C:\Users\JackLee\Desktop\ex.csv');
 
 x=def(:,1);
 y=def(:,2);
