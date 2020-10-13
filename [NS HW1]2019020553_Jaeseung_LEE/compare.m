@@ -1,6 +1,8 @@
 clearvars
 close all
 
+import randgen.*
+
 Totals = 10000; % The number of generated random numbers(each distribution)
 NumBins = 51;
 
